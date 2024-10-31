@@ -1,0 +1,14 @@
+# Change-IP-Address- 
+
+```Python
+import socket
+
+def change_ip(new_ip):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    s.setsockopt(socket.IPPROTO_IP, socket.IP_ADDRESS, socket.inet_aton(new_ip))
+    s.close()
+
+# Пример использования:
+change_ip('145.571.9.2')
+```
